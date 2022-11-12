@@ -6,3 +6,13 @@
 //
 
 import Foundation
+import Alamofire
+
+enum Error: Swift.Error {
+    case errorReques(AFError)
+}
+
+protocol GenericService: AnyObject {
+    typealias completion <T> = (_ result: T, _ failure: Error?) -> Void
+}
+

@@ -7,19 +7,76 @@
 
 import Foundation
 
-struct APIResult: Codable {
-    var data: [APICharacterData]
+import Foundation
+
+// MARK: - Character
+struct Character: Codable {
+    let code: Int?
+    let status, copyright, attributionText: String?
+    let attributionHTML: String?
+    let data: DataClass?
+    let etag: String?
 }
 
-struct APICharacterData: Codable {
-    var count: Int
-    var result: [Character]
+// MARK: - DataClass
+struct DataClass: Codable {
+    let offset, limit, total, count: Int?
+    let results: [Result]?
 }
 
-struct Character: Identifiable, Codable {
-    var id: Int
-    var name: String
-    var description: String
-    var thumbnail: [String:String]
-    var urls: [[String:String]]
+// MARK: - Result
+struct Result: Codable {
+    let id: Int?
+    let name, resultDescription, modified: String?
+    let resourceURI: String?
+    let urls: [URLElement]?
+    let thumbnail: Thumbnail?
+    let comics: Comics?
+    let stories: Stories?
+    let events, series: Comics?
+
+    enum CodingKeys: String, CodingKey {
+        case id, name
+        case resultDescription = "description"
+        case modified, resourceURI, urls, thumbnail, comics, stories, events, series
+    }
+}
+
+// MARK: - Comics
+struct Comics: Codable {
+    let available, returned: Int?
+    let collectionURI: String?
+    let items: [ComicsItem]?
+}
+
+// MARK: - ComicsItem
+struct ComicsItem: Codable {
+    let resourceURI, name: String?
+}
+
+// MARK: - Stories
+struct Stories: Codable {
+    let available, returned: Int?
+    let collectionURI: String?
+    let items: [StoriesItem]?
+}
+
+// MARK: - StoriesItem
+struct StoriesItem: Codable {
+    let resourceURI, name, type: String?
+}
+
+// MARK: - Thumbnail
+struct Thumbnail: Codable {
+    let path, thumbnailExtension: String?
+
+    enum CodingKeys: String, CodingKey {
+        case path
+        case thumbnailExtension = "extension"
+    }
+}
+
+// MARK: - URLElement
+struct URLElement: Codable {
+    let type, url: String?
 }
