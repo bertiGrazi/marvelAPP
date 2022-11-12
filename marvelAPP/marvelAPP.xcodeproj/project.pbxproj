@@ -16,6 +16,8 @@
 		B1648D7529203DC800444135 /* marvelAPPTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1648D7429203DC800444135 /* marvelAPPTests.swift */; };
 		B1648D7F29203DC800444135 /* marvelAPPUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1648D7E29203DC800444135 /* marvelAPPUITests.swift */; };
 		B1648D8129203DC800444135 /* marvelAPPUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1648D8029203DC800444135 /* marvelAPPUITestsLaunchTests.swift */; };
+		B1648D942920406100444135 /* Character.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1648D932920406100444135 /* Character.swift */; };
+		B1648D962920415A00444135 /* GenericService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1648D952920415A00444135 /* GenericService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +51,8 @@
 		B1648D7A29203DC800444135 /* marvelAPPUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = marvelAPPUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B1648D7E29203DC800444135 /* marvelAPPUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = marvelAPPUITests.swift; sourceTree = "<group>"; };
 		B1648D8029203DC800444135 /* marvelAPPUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = marvelAPPUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		B1648D932920406100444135 /* Character.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Character.swift; sourceTree = "<group>"; };
+		B1648D952920415A00444135 /* GenericService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenericService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -150,6 +154,7 @@
 		B1648D8F29203ECE00444135 /* Service */ = {
 			isa = PBXGroup;
 			children = (
+				B1648D952920415A00444135 /* GenericService.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -157,6 +162,7 @@
 		B1648D9029203ED600444135 /* Modal */ = {
 			isa = PBXGroup;
 			children = (
+				B1648D932920406100444135 /* Character.swift */,
 			);
 			path = Modal;
 			sourceTree = "<group>";
@@ -307,8 +313,10 @@
 			files = (
 				B1648D5F29203DC600444135 /* CharactersViewController.swift in Sources */,
 				B1648D5B29203DC600444135 /* AppDelegate.swift in Sources */,
+				B1648D942920406100444135 /* Character.swift in Sources */,
 				B1648D6529203DC600444135 /* marvelAPP.xcdatamodeld in Sources */,
 				B1648D5D29203DC600444135 /* SceneDelegate.swift in Sources */,
+				B1648D962920415A00444135 /* GenericService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
