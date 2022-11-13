@@ -9,23 +9,23 @@ import Foundation
 
 import Foundation
 
-// MARK: - Character
-struct Character: Codable {
+// MARK: - MarvelInfo
+struct MarvelInfo: Codable {
     let code: Int?
     let status, copyright, attributionText: String?
     let attributionHTML: String?
-    let data: DataClass?
+    let data: MarvelData?
     let etag: String?
 }
 
 // MARK: - DataClass
-struct DataClass: Codable {
+struct MarvelData: Codable {
     let offset, limit, total, count: Int?
-    let results: [Result]?
+    let results: [MarvelCharacter]?
 }
 
 // MARK: - Result
-struct Result: Codable {
+struct MarvelCharacter: Codable {
     let id: Int?
     let name, resultDescription, modified: String?
     let resourceURI: String?

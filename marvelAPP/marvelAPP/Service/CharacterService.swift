@@ -10,19 +10,19 @@ import Alamofire
 import CryptoKit
 
 protocol CharacterServiceDelegate: GenericService {
-    func getAllCharater(completion: @escaping completion<Character?>)
+    func getAllCharater(completion: @escaping completion<MarvelInfo?>)
 }
 
 class CharacterService: CharacterServiceDelegate{
     let publicKey: String = "90d29bf191cccadaa1b1f3cbef76519d"
     let privateKey: String = "b5507ae92198ad027e531e59f202e709dca828c5"
     
-    func getAllCharater(completion: @escaping completion<Character?>) {
+    func getAllCharater(completion: @escaping completion<MarvelInfo?>) {
         let ts = String(Date().timeIntervalSince1970)
         let hash = generateHash("\(ts)\(privateKey)\(publicKey)")
         let url: String = "https://gateway.marvel.com:443/v1/public/characters?ts=\(ts)&apikey=\(publicKey)&hash=\(hash)"
         
-        AF.request(url, method: .get).validate().responseDecodable(of: Character.self) { response in
+        AF.request(url, method: .get).validate().responseDecodable(of: MarvelInfo.self) { response in
             print(#function)
             debugPrint(response)
             
