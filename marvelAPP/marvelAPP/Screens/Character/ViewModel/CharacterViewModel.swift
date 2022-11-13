@@ -15,17 +15,26 @@ protocol CharacterViewModelDelegate: AnyObject {
 class CharacterViewModel {
     private let service: CharacterService = CharacterService()
     private weak var delegate: CharacterViewModelDelegate?
-    public func delegate(delegate: CharacterViewModelDelegate?) {
+    private var data: [MarvelData] = []
+    public func characterViewModelDelegate(delegate: CharacterViewModelDelegate?) {
         self.delegate = delegate
     }
     
     public func fetchAllCharacter() {
         self.service.getAllCharater { sucess, error in
             if let sucess = sucess {
+                //self.data = sucess.data
                 self.delegate?.sucess()
             } else {
                 self.delegate?.error(error?.localizedDescription ?? "")
             }
         }
+    }
+    
+    public var numberOfRow: Int {
+        return data.count
+    }
+    public func titleForCell(indexPath: IndexPath) -> String {
+        return  data[indexPath.section].results?[indexPath.row].name ?? ""
     }
 }
