@@ -12,6 +12,17 @@ class CharactersViewController: UIViewController {
     let characterViewModel: CharacterViewModel = CharacterViewModel()
     
     //MARK: View
+    lazy var searchCharacterTextField: UITextField = {
+        let textField = UITextField()
+        textField.placeholder = " Search for Character..."
+        textField.keyboardType = .alphabet
+        textField.keyboardAppearance = .default
+        textField.backgroundColor = .white
+        textField.layer.cornerRadius = 8
+        textField.translatesAutoresizingMaskIntoConstraints = false
+        return textField
+    }()
+    
     lazy var charactertableView: UITableView = {
         let tableView = UITableView()
         tableView.backgroundColor = .black
@@ -42,12 +53,19 @@ class CharactersViewController: UIViewController {
     }
     
     fileprivate func setupLayout() {
+        view.addSubview(searchCharacterTextField)
         view.addSubview(charactertableView)
     }
     
     fileprivate func setupLayoutConstrains() {
         NSLayoutConstraint.activate([
-            self.charactertableView.topAnchor.constraint(equalTo: view.topAnchor),
+            self.searchCharacterTextField.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 20),
+            self.searchCharacterTextField.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
+            self.searchCharacterTextField.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
+            self.searchCharacterTextField.widthAnchor.constraint(equalToConstant: UIScreen.main.bounds.width),
+            self.searchCharacterTextField.heightAnchor.constraint(equalToConstant: 50),
+            
+            self.charactertableView.topAnchor.constraint(equalTo: searchCharacterTextField.bottomAnchor),
             self.charactertableView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             self.charactertableView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
             self.charactertableView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
