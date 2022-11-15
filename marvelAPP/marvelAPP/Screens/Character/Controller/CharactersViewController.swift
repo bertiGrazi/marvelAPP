@@ -88,6 +88,11 @@ extension CharactersViewController: CharacterViewModelDelegate {
 //MARK: - UITableViewDataSource, UITableViewDelegate
 extension CharactersViewController: UITableViewDataSource, UITableViewDelegate {
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let characterDeatilsViewController = CharacterDetailsViewController(id: characterViewModel.characterIdForCellAtIndex(indexPath.row))
+        navigationController?.pushViewController(characterDeatilsViewController, animated: true)
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.characterViewModel.numberOfRow
     }

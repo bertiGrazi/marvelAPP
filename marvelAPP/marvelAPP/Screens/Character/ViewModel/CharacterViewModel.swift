@@ -38,4 +38,8 @@ class CharacterViewModel {
     public func titleForCell(indexPath: IndexPath) -> String {
         return  data?.results?[indexPath.row].name ?? ""
     }
+    
+    func characterIdForCellAtIndex(_ index : Int) -> Int {
+        return data?.results?[index].id ?? 1011334
+    }
 }

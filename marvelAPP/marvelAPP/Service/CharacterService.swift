@@ -11,6 +11,7 @@ import CryptoKit
 
 protocol CharacterServiceDelegate: GenericService {
     func getAllCharater(completion: @escaping completion<MarvelInfo?>)
+    func getDetailsCharacter(fromCharacterId id: Int, completion: @escaping completion<MarvelCharacter?>)
 }
 
 class CharacterService: CharacterServiceDelegate{
@@ -23,6 +24,28 @@ class CharacterService: CharacterServiceDelegate{
         let url: String = "https://gateway.marvel.com:443/v1/public/characters?ts=\(ts)&apikey=\(publicKey)&hash=\(hash)"
         
         AF.request(url, method: .get).validate().responseDecodable(of: MarvelInfo.self) { response in
+            print(#function)
+            debugPrint(response)
+            
+            switch response.result {
+            case .success(let sucess):
+                print("SUCESS -> \(#function)")
+                completion(sucess, nil)
+            
+            case .failure(let error):
+                print("ERROR -> \(#function)")
+                completion(nil, Error.errorReques(error))
+            }
+        }
+    }
+    
+    func getDetailsCharacter(fromCharacterId id: Int, completion: @escaping completion<MarvelCharacter?>) {
+        //https://gateway.marvel.com:443/v1/public/characters/1011334?apikey=90d29bf191cccadaa1b1f3cbef76519d
+        let ts = String(Date().timeIntervalSince1970)
+        let hash = generateHash("\(ts)\(privateKey)\(publicKey)")
+        let url: String = "https://gateway.marvel.com:443/v1/public/characters/\(id)?ts=\(ts)&apikey=\(publicKey)&hash=\(hash)"
+        
+        AF.request(url, method: .get).validate().responseDecodable(of: MarvelCharacter.self) { response in
             print(#function)
             debugPrint(response)
             

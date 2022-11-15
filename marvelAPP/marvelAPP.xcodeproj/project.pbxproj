@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		13574686959CEBA3D5507D2C /* Pods_marvelAPPTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C0C73376A06F5F17FFAD40A /* Pods_marvelAPPTests.framework */; };
+		B14681AD29243695008F23DD /* CharacterDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B14681AC29243695008F23DD /* CharacterDetailsViewModel.swift */; };
+		B14681AF2924382F008F23DD /* CharacterDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B14681AE2924382F008F23DD /* CharacterDetailsViewController.swift */; };
 		B1648D5B29203DC600444135 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1648D5A29203DC600444135 /* AppDelegate.swift */; };
 		B1648D5D29203DC600444135 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1648D5C29203DC600444135 /* SceneDelegate.swift */; };
 		B1648D5F29203DC600444135 /* CharactersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1648D5E29203DC600444135 /* CharactersViewController.swift */; };
@@ -50,6 +52,8 @@
 		61A891617F904DC5C2590A3D /* Pods_marvelAPP_marvelAPPUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_marvelAPP_marvelAPPUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		76289A9E57A236CA06CDEE72 /* Pods-marvelAPP-marvelAPPUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-marvelAPP-marvelAPPUITests.debug.xcconfig"; path = "Target Support Files/Pods-marvelAPP-marvelAPPUITests/Pods-marvelAPP-marvelAPPUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		995F7EA0183EF03538512D35 /* Pods-marvelAPPTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-marvelAPPTests.release.xcconfig"; path = "Target Support Files/Pods-marvelAPPTests/Pods-marvelAPPTests.release.xcconfig"; sourceTree = "<group>"; };
+		B14681AC29243695008F23DD /* CharacterDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterDetailsViewModel.swift; sourceTree = "<group>"; };
+		B14681AE2924382F008F23DD /* CharacterDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterDetailsViewController.swift; sourceTree = "<group>"; };
 		B1648D5729203DC600444135 /* marvelAPP.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = marvelAPP.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B1648D5A29203DC600444135 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B1648D5C29203DC600444135 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -193,6 +197,7 @@
 			isa = PBXGroup;
 			children = (
 				B1648D5E29203DC600444135 /* CharactersViewController.swift */,
+				B14681AE2924382F008F23DD /* CharacterDetailsViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -226,6 +231,7 @@
 			isa = PBXGroup;
 			children = (
 				B179A77E292047A100C62D59 /* CharacterViewModel.swift */,
+				B14681AC29243695008F23DD /* CharacterDetailsViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -500,9 +506,11 @@
 				B1648D5B29203DC600444135 /* AppDelegate.swift in Sources */,
 				B1648D942920406100444135 /* MarvelInfo.swift in Sources */,
 				B1648D6529203DC600444135 /* marvelAPP.xcdatamodeld in Sources */,
+				B14681AF2924382F008F23DD /* CharacterDetailsViewController.swift in Sources */,
 				B179A77F292047A100C62D59 /* CharacterViewModel.swift in Sources */,
 				B179A77D2920429800C62D59 /* CharacterService.swift in Sources */,
 				B1AB5D492920583C006E354C /* CharacterTableViewCell.swift in Sources */,
+				B14681AD29243695008F23DD /* CharacterDetailsViewModel.swift in Sources */,
 				B1648D5D29203DC600444135 /* SceneDelegate.swift in Sources */,
 				B1648D962920415A00444135 /* GenericService.swift in Sources */,
 			);
