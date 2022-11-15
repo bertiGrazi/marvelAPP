@@ -37,7 +37,6 @@ class CharactersViewController: UIViewController {
         
         characterViewModel.characterViewModelDelegate(delegate: self)
         characterViewModel.fetchAllCharacter()
-        characterViewModel.fetchDetailsCharacter()
         
         charactertableView.delegate = self
         charactertableView.dataSource = self
@@ -88,6 +87,12 @@ extension CharactersViewController: CharacterViewModelDelegate {
 
 //MARK: - UITableViewDataSource, UITableViewDelegate
 extension CharactersViewController: UITableViewDataSource, UITableViewDelegate {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let characterDetailsViewController = CharacterDetailsViewController()
+        characterDetailsViewController.characterModel = self.characterViewModel.data?.results?[indexPath.row]
+        characterDetailsViewController.detailViewModel = CharacterDetailsViewModel.init(id: "\(self.characterViewModel.data?.results?[indexPath.row].id ?? 1011334)")
+        self.present(characterDetailsViewController, animated: true)
+    }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.characterViewModel.numberOfRow

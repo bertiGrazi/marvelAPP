@@ -23,6 +23,8 @@
 		B179A77F292047A100C62D59 /* CharacterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B179A77E292047A100C62D59 /* CharacterViewModel.swift */; };
 		B179A7812920549100C62D59 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B179A7802920549100C62D59 /* Extensions.swift */; };
 		B1AB5D492920583C006E354C /* CharacterTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1AB5D482920583B006E354C /* CharacterTableViewCell.swift */; };
+		B1CA093A2923C45000EC3707 /* CharacterDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1CA09392923C45000EC3707 /* CharacterDetailsViewModel.swift */; };
+		B1CA093C2923C6F100EC3707 /* CharacterDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1CA093B2923C6F100EC3707 /* CharacterDetailsViewController.swift */; };
 		E5CF107867ABEA852B577396 /* Pods_marvelAPP_marvelAPPUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 61A891617F904DC5C2590A3D /* Pods_marvelAPP_marvelAPPUITests.framework */; };
 		F909A3DCC4B617734079D6D8 /* Pods_marvelAPP.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B3D644A965E59AF482607415 /* Pods_marvelAPP.framework */; };
 /* End PBXBuildFile section */
@@ -69,6 +71,8 @@
 		B179A77E292047A100C62D59 /* CharacterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterViewModel.swift; sourceTree = "<group>"; };
 		B179A7802920549100C62D59 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		B1AB5D482920583B006E354C /* CharacterTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterTableViewCell.swift; sourceTree = "<group>"; };
+		B1CA09392923C45000EC3707 /* CharacterDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterDetailsViewModel.swift; sourceTree = "<group>"; };
+		B1CA093B2923C6F100EC3707 /* CharacterDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterDetailsViewController.swift; sourceTree = "<group>"; };
 		B3D644A965E59AF482607415 /* Pods_marvelAPP.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_marvelAPP.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B49113C3C9528CE475BF27F7 /* Pods-marvelAPP.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-marvelAPP.debug.xcconfig"; path = "Target Support Files/Pods-marvelAPP/Pods-marvelAPP.debug.xcconfig"; sourceTree = "<group>"; };
 		E5DD49367A476823872D279B /* Pods-marvelAPP-marvelAPPUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-marvelAPP-marvelAPPUITests.release.xcconfig"; path = "Target Support Files/Pods-marvelAPP-marvelAPPUITests/Pods-marvelAPP-marvelAPPUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -193,6 +197,7 @@
 			isa = PBXGroup;
 			children = (
 				B1648D5E29203DC600444135 /* CharactersViewController.swift */,
+				B1CA093B2923C6F100EC3707 /* CharacterDetailsViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -226,6 +231,7 @@
 			isa = PBXGroup;
 			children = (
 				B179A77E292047A100C62D59 /* CharacterViewModel.swift */,
+				B1CA09392923C45000EC3707 /* CharacterDetailsViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -500,9 +506,11 @@
 				B1648D5B29203DC600444135 /* AppDelegate.swift in Sources */,
 				B1648D942920406100444135 /* MarvelInfo.swift in Sources */,
 				B1648D6529203DC600444135 /* marvelAPP.xcdatamodeld in Sources */,
+				B1CA093C2923C6F100EC3707 /* CharacterDetailsViewController.swift in Sources */,
 				B179A77F292047A100C62D59 /* CharacterViewModel.swift in Sources */,
 				B179A77D2920429800C62D59 /* CharacterService.swift in Sources */,
 				B1AB5D492920583C006E354C /* CharacterTableViewCell.swift in Sources */,
+				B1CA093A2923C45000EC3707 /* CharacterDetailsViewModel.swift in Sources */,
 				B1648D5D29203DC600444135 /* SceneDelegate.swift in Sources */,
 				B1648D962920415A00444135 /* GenericService.swift in Sources */,
 			);

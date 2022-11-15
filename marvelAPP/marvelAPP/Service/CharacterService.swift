@@ -11,18 +11,19 @@ import CryptoKit
 
 protocol CharacterServiceDelegate: GenericService {
     func getAllCharater(completion: @escaping completion<MarvelInfo?>)
-    func getDetailsCharacter(id: Int, completion: @escaping completion<MarvelInfo?>)
+    func getDetailsCharacter(completion: @escaping completion<MarvelInfo?>)
 }
 
 class CharacterService: CharacterServiceDelegate{
     let publicKey: String = "90d29bf191cccadaa1b1f3cbef76519d"
     let privateKey: String = "b5507ae92198ad027e531e59f202e709dca828c5"
     let ts = String(Date().timeIntervalSince1970)
+    var charcterId: String?
     
-    func getDetailsCharacter(id: Int, completion: @escaping completion<MarvelInfo?>) {
+    func getDetailsCharacter(completion: @escaping completion<MarvelInfo?>) {
     // https://gateway.marvel.com:443/v1/public/characters/2?apikey=90d29bf191cccadaa1b1f3cbef76519d
         let hash = generateHash("\(ts)\(privateKey)\(publicKey)")
-        let url: String = "https://gateway.marvel.com:443/v1/public/characters?\(id)&ts=\(ts)&apikey=\(publicKey)&hash=\(hash)"
+        let url: String = "https://gateway.marvel.com:443/v1/public/characters/\(self.charcterId ?? "1011334")?ts=\(ts)&apikey=\(publicKey)&hash=\(hash)"
         
         AF.request(url, method: .get).validate().responseDecodable(of: MarvelInfo.self) { response in
             print(#function)
