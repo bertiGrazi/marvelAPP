@@ -16,6 +16,8 @@ class CharacterViewModel {
     private let service: CharacterService = CharacterService()
     private weak var delegate: CharacterViewModelDelegate?
     private var data: MarvelData?
+    private var idCharacter: Int = 1011334
+    
     public func characterViewModelDelegate(delegate: CharacterViewModelDelegate?) {
         self.delegate = delegate
     }
@@ -24,6 +26,16 @@ class CharacterViewModel {
         self.service.getAllCharater { sucess, error in
             if let sucess = sucess {
                 self.data = sucess.data
+                self.delegate?.sucess()
+            } else {
+                self.delegate?.error(error?.localizedDescription ?? "")
+            }
+        }
+    }
+    
+    public func fetchDetailsCharacter() {
+        self.service.getDetailsCharacter(id: idCharacter) { sucess, error in
+            if let sucess = sucess {
                 self.delegate?.sucess()
             } else {
                 self.delegate?.error(error?.localizedDescription ?? "")

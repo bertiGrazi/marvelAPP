@@ -37,6 +37,7 @@ class CharactersViewController: UIViewController {
         
         characterViewModel.characterViewModelDelegate(delegate: self)
         characterViewModel.fetchAllCharacter()
+        characterViewModel.fetchDetailsCharacter()
         
         charactertableView.delegate = self
         charactertableView.dataSource = self
